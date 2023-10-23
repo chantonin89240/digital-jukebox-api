@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "U3RM/KOfjoxOynl+bnVEzBsWAbz1xI4MAhfXCIYvbF4=",
+  "Source": "DigitalJukebox.ApiGateway",
+  "BasePath": "_content/DigitalJukebox.ApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

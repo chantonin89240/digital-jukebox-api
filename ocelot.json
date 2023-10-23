@@ -1,0 +1,33 @@
+﻿{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/bars",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "authentication-svc"
+                }
+            ],
+            "UpstreamPathTemplate": "/api/bars",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/bars/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "authentication-svc"
+                }
+            ],
+            "UpstreamPathTemplate": "/api/bars/{id}",
+            "UpstreamHttpMethod": [ "Get", "Delete" ]
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "https://ocelot.local"
+
+    }
+}
+
+
+
