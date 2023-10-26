@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  digitaljukebox.apigateway:
-    image: ${DOCKER_REGISTRY-}digitaljukebox
-    build:
-      context: .
-      dockerfile: DigitalJukebox.ApiGateway/Dockerfile
