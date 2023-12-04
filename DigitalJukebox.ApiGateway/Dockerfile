@@ -1,4 +1,3 @@
-#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
@@ -7,10 +6,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["DigitalJukebox.ApiGateway/DigitalJukebox.ApiGateway.csproj", "DigitalJukebox.ApiGateway/"]
-RUN dotnet restore "DigitalJukebox.ApiGateway/DigitalJukebox.ApiGateway.csproj"
+COPY ["DigitalJukebox.ApiGateway.csproj", "."]
+RUN dotnet restore "./DigitalJukebox.ApiGateway.csproj"
 COPY . .
-WORKDIR "/src/DigitalJukebox.ApiGateway"
+WORKDIR "/src/."
 RUN dotnet build "DigitalJukebox.ApiGateway.csproj" -c Release -o /app/build
 
 FROM build AS publish
@@ -19,5 +18,5 @@ RUN dotnet publish "DigitalJukebox.ApiGateway.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-COPY ./DigitalJukebox.ApiGateway/ocelot.json ./ocelot.json
+COPY ./ocelot.json ./ocelot.json
 ENTRYPOINT ["dotnet", "DigitalJukebox.ApiGateway.dll"]
