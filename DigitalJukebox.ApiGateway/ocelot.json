@@ -1,39 +1,65 @@
 ﻿{
-    "Routes": [
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/bars",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-            "DownstreamPathTemplate": "/api/bars",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "authentication-svc"
-                }
-            ],
-            "UpstreamPathTemplate": "/api/bars",
-            "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
-        },
-      {
-        "DownstreamPathTemplate": "/api/bars/{id}",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "authentication-svc"
-          }
-        ],
-        "UpstreamPathTemplate": "/api/bars/{id}",
-        "UpstreamHttpMethod": [ "Get", "Delete" ]
-      },
-      {
-        "DownstreamPathTemplate": "/api/catalogs/search/{search}",
-        "DownstreamScheme": "http",
-        "DownstreamHostAndPorts": [
-          {
-            "Host": "catalog"
-          }
-        ],
-        "UpstreamPathTemplate": "/api/catalogs/search/{search}",
-        "UpstreamHttpMethod": [ "Get" ]
-      }
-    ],
+          "Host": "authentication-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/bars",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+    },
+    // route get bar by id
+    {
+      "DownstreamPathTemplate": "/api/bars/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authentication-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/bars/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    //route get search deezer
+    {
+      "DownstreamPathTemplate": "/api/catalogs/search/{search}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalogs/search/{search}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    // route get track by id in catalog
+    {
+      "DownstreamPathTemplate": "/api/catalogs//bar/{idbar}/track/{idtrack}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalogs/bar/{idbar}/track/{idtrack}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    // route post add track in catalog
+    {
+      "DownstreamPathTemplate": "/api/catalogs",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalogs",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+  ],
     "GlobalConfiguration": {
         "BaseUrl": "https://ocelot.local"
 
