@@ -11,7 +11,6 @@
       "UpstreamPathTemplate": "/api/bars",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
     },
-    // route get bar by id
     {
       "DownstreamPathTemplate": "/api/bars/{id}",
       "DownstreamScheme": "http",
@@ -23,7 +22,6 @@
       "UpstreamPathTemplate": "/api/bars/{id}",
       "UpstreamHttpMethod": [ "Get", "Delete" ]
     },
-    //route get search deezer
     {
       "DownstreamPathTemplate": "/api/catalogs/search/{search}",
       "DownstreamScheme": "http",
@@ -35,36 +33,10 @@
       "UpstreamPathTemplate": "/api/catalogs/search/{search}",
       "UpstreamHttpMethod": [ "Get" ]
     },
-    // route get track by id in catalog
-    {
-      "DownstreamPathTemplate": "/api/catalogs//bar/{idbar}/track/{idtrack}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "catalog"
-        }
-      ],
-      "UpstreamPathTemplate": "/api/catalogs/bar/{idbar}/track/{idtrack}",
-      "UpstreamHttpMethod": [ "Get" ]
-    },
-    // route post add track in catalog
-    {
-      "DownstreamPathTemplate": "/api/catalogs",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "catalog"
-        }
-      ],
-      "UpstreamPathTemplate": "/api/catalogs",
-      "UpstreamHttpMethod": [ "Post" ]
-    }
+    
   ],
-    "GlobalConfiguration": {
-        "BaseUrl": "https://ocelot.local"
+  "GlobalConfiguration": {
+    "BaseUrl": "https://ocelot.local"
 
-    }
+  }
 }
-
-
-
