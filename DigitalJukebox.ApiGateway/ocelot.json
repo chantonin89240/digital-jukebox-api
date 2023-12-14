@@ -27,13 +27,34 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "catalog"
+          "Host": "catalog-svc"
         }
       ],
       "UpstreamPathTemplate": "/api/catalogs/search/{search}",
       "UpstreamHttpMethod": [ "Get" ]
     },
-    
+    {
+      "DownstreamPathTemplate": "/api/catalogs/bar/{idbar}/track/{idtrack}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalogs/bar/{idbar}/track/{idtrack}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/catalogs",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalogs",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://ocelot.local"
