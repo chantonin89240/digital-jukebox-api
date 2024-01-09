@@ -13,7 +13,7 @@ builder.Services.AddCors(options =>
     options.AddDefaultPolicy(
         policy =>
         {
-            policy.WithOrigins("http://localhost:3000") // Spécifiez les domaines autorisés
+            policy.WithOrigins("http://localhost:3000", "http://digitaljukeboxg2.reseau-labo.fr/") // Spécifiez les domaines autorisés
                   .AllowAnyHeader()
                   .AllowCredentials()
                   .AllowAnyMethod();
