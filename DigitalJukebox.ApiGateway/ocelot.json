@@ -54,6 +54,30 @@
       ],
       "UpstreamPathTemplate": "/api/catalogs",
       "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/playlists",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authentication-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/playlists",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/playlists/bar/{idBar}/playlist/{idPlaylist}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7164
+          //"Host": "playlist-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/playlists/bar/{barId}/playlist/{playlistId}",
+      "UpstreamHttpMethod": [ "Get" ]
     }
   ],
   "GlobalConfiguration": {
