@@ -55,12 +55,15 @@
       "UpstreamPathTemplate": "/api/catalogs",
       "UpstreamHttpMethod": [ "Post" ]
     },
+
+
+
     {
       "DownstreamPathTemplate": "/api/playlists",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "authentication-svc"
+          "Host": "playlist-svc"
         }
       ],
       "UpstreamPathTemplate": "/api/playlists",
@@ -71,9 +74,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 7164
-          //"Host": "playlist-svc"
+          "Host": "playlist-svc"
         }
       ],
       "UpstreamPathTemplate": "/api/playlists/bar/{barId}/playlist/{playlistId}",
