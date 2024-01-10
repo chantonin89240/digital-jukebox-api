@@ -55,9 +55,6 @@
       "UpstreamPathTemplate": "/api/catalogs",
       "UpstreamHttpMethod": [ "Post" ]
     },
-
-
-
     {
       "DownstreamPathTemplate": "/api/playlists",
       "DownstreamScheme": "http",
