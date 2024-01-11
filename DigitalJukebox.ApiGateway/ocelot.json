@@ -67,7 +67,7 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
     },
     {
-      "DownstreamPathTemplate": "/api/playlists/bar/{idBar}/playlist/{idPlaylist}",
+      "DownstreamPathTemplate": "/api/playlists/bar/{barId}/playlist/{playlistId}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -76,6 +76,17 @@
       ],
       "UpstreamPathTemplate": "/api/playlists/bar/{barId}/playlist/{playlistId}",
       "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/playlists/song",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "playlist-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/playlists/song",
+      "UpstreamHttpMethod": [ "Post" ]
     }
   ],
   "GlobalConfiguration": {
