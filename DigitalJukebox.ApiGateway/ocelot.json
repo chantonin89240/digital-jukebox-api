@@ -87,6 +87,17 @@
       ],
       "UpstreamPathTemplate": "/api/playlists/song",
       "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/catalogs/{idbar}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog-svc"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalogs/{idbar}",
+      "UpstreamHttpMethod": [ "Get" ]
     }
   ],
   "GlobalConfiguration": {
